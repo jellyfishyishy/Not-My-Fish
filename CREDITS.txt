@@ -1,0 +1,35 @@
+***CREDITS***
+Bethany Cho
+CS 376
+Exercise 6
+
+Fishing line logic:
+https://discussions.unity.com/t/coding-a-2d-extendable-and-retractable-fishline/945636/11
+
+https://www.youtube.com/watch?v=lq9DvOyEync
+
+ScreenPosition and IsOffScreen logic:
+Angry Blox by Ian Horswill and of course myself
+
+AnimatedSprite and Reset logic:
+https://www.youtube.com/watch?v=TKt_VlMn_aA by Zigurous
+
+Fish sprites:
+https://free-game-assets.itch.io/free-fishing-pixel-art-pack by Craftpix.net
+
+SpawnUtilities, Spawner, and Respawn:
+Dodgeball by Ian Horswill and myself
+
+Drop sound:
+https://samplefocus.com/samples/water-drop by Adrija Ray
+
+Reel sound:
+https://pixabay.com/sound-effects/spinning-reel-27903/ by tosha73
+
+Chime sound:
+https://pixabay.com/sound-effects/notification-6175/ by finn.appleton
+
+Applause sound:
+https://pixabay.com/sound-effects/applause-cheer-236786/ by Driken5482
+
+All other artwork and code created by me.

@@ -1,0 +1,9 @@
+***INSTRUCTIONS***
+
+Welcome to Not My Fish. You have a boat. You're fishing. But you can only carry so many fish. Catch as many fish as possible without going overboard. 
+
+Control your fishing line using the arrow keys. Press space to catch a fish. In order to catch a fish, the hook must come from underneath the fish. Sometimes fish don't bite. 
+
+Each fish has a weight. Your boat has a maximum weight it can hold. With every fish you catch, your remaining weight gets smaller and smaller. Try to get your remaining weight down to as close as 0 as possible without sinking. Fish weight is generally dictated by size. The smallest possible weight is 1 and the largest is 8 lbs. Every time you catch a fish, you'll hear a chime. If you get your boat down to exactly 0 lbs, you'll hear applause. In every case where the weight is either under or at 0, the game restarts. Don't get discouraged, and keep on trying!
+
+If you ever go off screen, you will be respawned to the top of the screen.

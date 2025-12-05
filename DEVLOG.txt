@@ -1,0 +1,141 @@
+***GAME DEV LOG***
+Bethany Cho
+CS 376
+Exercise 6
+
+11/17/2024 
+6:24 PM
+Well, the game is due tomorrow, so I mean, I guess this will just be one super long entry. :D
+
+I actually started with this idea on Exercise 5, but it was too hard, so I gave up and pivoted. It definitely won't be different this time.
+
+I have a friend who loves to take the phrase "I've got some fish to fry" and absolutely hammer it into the ground. Everything is a fish. If someone asks her to do something and she doesn't want to do it, she says, "That's not my fish". If she's procrastinating, she'll say, "The fish are alive and well". If she thinks it'll be an easy task, she goes "I've got minnows," but if it's really hard, she'll say "I have a whale". If you can imagine a way in which this phrase can be completely abused and overused, she's probably said it. 
+
+Now, this leads me to my idea; at first, I wanted to make some kind of cooking game. Frying fish, filling orders. Then I was like...I don't know how on earth I'm supposed to come up with like two moving parts or whatever it was for Exercise 5. I also was on a time crunch, so I was trying to think of a way I could utilize our code from class. I thought when you think about it, the idea of enemies populating the screen and either following or running away from something is really similar to the idea of fish in a pond. Turns out, the hard part is the fishing line. I'm having a hard time finding resources that I'm successful with.
+
+**AESTHETIC GOALS**
+In general, I've been struggling with time management a lot lately, so I wanted to do something relating to balance or time.
+- I want the player to feel stressed
+The player should really feel constrained in some way. This might be through time or some kind of point limit. Because it's a game, the stress should be momentary and also should be something that the player thinks they can handle the next time. I will have failed this if the player does not play again and try to do better than last time.
+
+- I want the player to feel like they are in control
+The player should strive to do better. I want it to be something where the player doesn't give up, and they play to the end of the round. This means that the player should be able to control different variables to benefit themselves or get a better outcome. They should be able to change things about their goals to fit a larger goal. I will have failed if the player gives up more often than not.
+
+It sounds a little sadistic, but I think that's a lot of what my life feels like right now. I feel stressed, and there's realistically not much I can do about my schedule and workload other than quit things to fix it, but I still feel the need/ability to fix it.
+
+**CORE LOOP**
+The core loop will consist of a goal fish being displayed, the player deciding if they want to catch that fish, and catching the fish. 
+
+My hope is that each fish is a different weight which is represented through points. Your boat can only hold so many fish, so if you exceed a given weight or point limit, your boat "sinks" meaning you lose. Giving players the opportunity to choose if they're going to go after a fish gives them a minor sense of control, but similar to Tetris, it's a bit of a gamble to choose the next fish, because you can't change if you don't like that one. I'm thinking there will also be some kind of time limit which will create a sense of urgency to play into the stress.
+
+7:00 PM
+So what do I have done? I have a fishing hook (I drew it myself. Stupid, I know.), and I have a fishing line that generates as the hook moves. Currently, the fishing line falls with gravity, and when I press the space button, it resets. I don't love that; I would ideally like it to reel back in, but I think I might need to change the gravity.
+
+7:50
+Um...no progress on the line, but I'm switching gears for now:
+- Add boundaries on the sides and bottom based on Space Invaders (my Exercise 5)
+x Add a boat
+x find fish sprites
+- Add fish generation
+- With fish generation, add collision
+- Highlight fish while touched
+- Have fish stick to hook if spacebar pressed
+- Add score
+- Add timer
+- Add sound
+x Make scene reset only when game is over, position resets instead
+x Figure out how to reel in line
+- Leaderboard?
+
+11:40 PM
+I went and watched a movie to reward myself for the week. It was demoralizing.
+
+1:05 AM
+I FIGURED OUT HOW TO REEL THE LINE IN. IT'S BEAUTIFUL. I also changed the scene reset. Before, I would reset the entire scene, but now I just reset the hook position. I'm thinking scene reset should only happen at game over. 
+
+11/18/2024
+
+1:25 AM
+I drew the boat sprite.
+
+2:10 AM
+I created the animation loop to use for any animated object. I used it for the boat, but it will also probably be used on the fish. 
+
+I'm also realizing I need to have one more object you can interact with.
+
+2:42 AM
+I just finished slicing all my fish sprites into their frames. I'm thinking that I should make a fish prefab and just sort of have different skins. I also just realized that I already have three objects that interact with each other. Hear me out: I have my hook. I have the fishing line which follows the hook. I have the fish which can be grabbed by the hook. I'm going to say that can probably happen tomorrow, especially since there's no class tomorrow.
+
+11/19/2024
+
+12:00 AM
+Okay, so we're lowkey just now getting back into it. 
+- Add fish generation
+- With fish generation, add collision
+- Highlight fish while touched
+- Have fish stick to hook if spacebar pressed
+- Add score
+- Add timer
+- Add sound
+
+Fish are going to be animated so easily. I'm thinking I use the Enemy logic from the dodgeball game, but I don't really want them to follow the player. I want them to spawn and just move laterally and then swim away if the hook gets too close. I also need them to spawn off screen.
+
+At this point, fish spawn randomly, but not offscreen. And they don't move. 
+
+Fish now move laterally, I just need them to spawn offscreen and also to respawn when they get offscreen.
+
+They respawn when offscreen. 
+
+TBH, I can live with the fish respawning in weird places. I really should figure out the collision stuff instead. I probably will get rid of the sand because it's just going to accentuate the weirdness of the fish spawning. I feel I can justify the fish passing the boat, but I cannot justify the fish swimming partially behind the sand. 
+
+I've also decided that I don't need to highlight the fish. I would like to have that later, but I'm going to be so honest, it's just the least of my problems. 
+
+Currently, I'm trying to figure out how to make collision work with this. 
+
+5:40 AM
+Okay so the reeling in element of catching a fish is so spotty. I've decided that is just how it has got to be. I don't know how to fix it, and it works kind of. It's like real fishing, I guess. Kind of super luck based. 
+
+I think to simplify this, instead of having prescribed fish, this will have to be a timer and score sort of situation.
+
+***POSTMORTEM***
+My aesthetic goals were stress and control. I originally wanted to make a fishing game that would require you to make active decisions on whether or not to follow instructions. My goals very quickly became make a working fishing game. I felt like this was a practical goal that still was good for the aesthetic goals. There's a sense of control in the ability to choose fish to catch, but there's an element of stress because there is unpredictability in what fish will actually be caught. I now have a working fishing game that I think exemplifies the emotions I wanted to create sort of. But then again, I think the core elements I hoped to implement those aesthetics ended up not happening which was sad. I would've loved for the player to be able to compare past performance in a more tangible and accessible way than just remembering. 
+
+I was pretty pleasantly surprised by how much I was able to do on my own. I referenced tutorials, but not for entire mechanics, just for small implementations. 
+
+What went wrong is I stayed up all night and missed the deadline. I guess my workload pushed it back way too much, but it was so stressful working on this, especially all in one night. I have a quiz today, and I can only hope that goes well.
+
+I think I did a good job of mapping out what I wanted to achieve and ordering that in a way that made sense. It helped a lot to have a check list of sorts.
+
+I would say I learned not to procrastinate, but the reality is, I will probably procrastinate again. I guess it has just reinforced how terrible of an idea it is. 
+
+I wish I knew at the beginning how complex small things would be. I wish I had known what direction to even go with researching how to implement what I wanted to implement. Specifically, how to spawn the fish in a way I wanted, how to make the hook maybe more user friendly, how to make a timer (I could've done that easily, but it felt not worth it), and how to make some kind of queue.
+
+***RUBRIC***
+Okay in my mind, here is how I fill the rubric. I know this is a little crazy, but I think it'll save you time, because I feel like this kind of lowkey took me awhile when grading.
+
+Objects on the screen:
+I have five objects: Fish, line, hook, boat, and score
+Four objects move: Fish, line, hook, boat
+
+Controls:
+Control line and hook with arrow keys.
+
+Interactions:
+Catch a fish with hook
+Hook drags along line
+
+Sound:
+Sound for score <- this is also the collision. There should only be a collision if the player chooses to catch said fish and the catch succeeds.
+Sound for beginning
+Sound for reel in
+Sound for win
+
+Goal and progress:
+I don't know. Do you understand?
+Score tells you how far you are from the weight of the boat
+Sound effect when goal is achieved
+
+Playability:
+I mean, yeah I can't do this part of your job. 
+
+
